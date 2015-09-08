@@ -1,0 +1,11 @@
+{
+  "name":"aol-php",
+  "description":"",
+  "autoload": {
+    "psr-4": {
+      "aol\\":"src/aol"
+    },
+    "files": [
+    ]
+  }
+}
