@@ -1,7 +1,8 @@
 <?php
 namespace aol\components\config;
 
-use aol\core\Atom_Object;
+use aol\core\Atomic_Object;
+use aol\core\Object_Converter;
 use aol\components\config\errors\Config_Error;
 
 /**
@@ -10,7 +11,7 @@ use aol\components\config\errors\Config_Error;
  * @brief json 파일로부터 설정을 로드하는 객체. 
  * @author Lee, Hyeon-gi
  */
-class Config extends Atom_Object {
+class Config extends Atomic_Object {
   public function __construct() {
     $this->configs = array();
   }
@@ -65,7 +66,7 @@ class Config extends Atom_Object {
       if ($i == (count($tokens) - 1)) {
         if (!is_array($current->$name))
           throw new Config_Error("Target path is not array", Config_Error::PUSH_FAILED);
-        array_push($current->$name, $value);
+        array_push($current->$name, Object_Converter::to_object($value));
       }
       else { 
         if (!isset($current->$name))
@@ -94,7 +95,7 @@ class Config extends Atom_Object {
    * 설정 정보를 리턴한다. 
    *
    * @param path string 설정 패스 
-   * @return object 설정 값
+   * @return object|array 설정 값
    */
   public function get($path) {
     $tokens = explode('.', $path);
@@ -142,7 +143,7 @@ class Config extends Atom_Object {
           throw new \Exception('Unknown error');
           break;
       }
-      $this->configs[$config_name] = $parse_data;
+      $this->configs[$config_name] = Object_Converter::to_object($parse_data);
     }
     catch (\Exception $e) {
       throw new Config_Error($e->getMessage(), Config_Error::LOAD_FAILED);

@@ -2,7 +2,7 @@
 namespace aol\components\language;
 
 use aol\components\config\Config;
-use aol\core\Atom_Object;
+use aol\core\Atomic_Object;
 use aol\components\language\dto\Message_DTO;
 
 class Language extends Config {

@@ -1,5 +1,5 @@
 <?php
 namespace aol\core;
 
-class Atom_Object {
+class Atomic_Object {
 }
