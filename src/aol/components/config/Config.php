@@ -9,6 +9,8 @@ use aol\components\config\errors\Config_Error;
  * @class Config
  *
  * @brief json 파일로부터 설정을 로드하는 객체. 
+ *        @TODO 유닛테스트 추가
+ *              case: 실시간으로 array(key=>value) 형태의 데이터를 집어넣고 가져올때 object형으로 리턴하는지 검사하기
  * @author Lee, Hyeon-gi
  */
 class Config extends Atomic_Object {
