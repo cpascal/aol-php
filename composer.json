@@ -1,5 +1,6 @@
 {
   "name":"aol-php",
+  "version":"0.0.1",
   "description":"",
   "autoload": {
     "psr-4": {
@@ -8,4 +9,5 @@
     "files": [
     ]
   }
+  "license":"MIT",
 }
