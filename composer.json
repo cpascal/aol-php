@@ -10,4 +10,10 @@
     ]
   }
   "license":"MIT",
+  "authors": [
+    {
+      "name":"Lee, Hyeon-gi",
+      "email":"maaya.lee@gmail.com"
+    }
+  ]
 }
